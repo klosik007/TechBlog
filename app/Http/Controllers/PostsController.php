@@ -7,8 +7,28 @@ use Illuminate\Http\Request;
 
 class PostsController extends Controller
 {
-    public function index() {
-        $posts = Post::all();
-        return view('admin.dashboard')->with('posts', $posts);
+    // show add post view
+    public function create() {
+        return view('admin.addpost');
+    }
+
+    // add post to database
+    public function store() {
+
+    }
+
+    // show edit post view
+    public function edit(int $id) {
+
+    }
+
+    // upfdate post in db
+    public function update() {
+
+    }
+
+    //delete post from db
+    public function delete(int $id) {
+
     }
 }

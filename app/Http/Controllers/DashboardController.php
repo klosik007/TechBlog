@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Post;
 use Illuminate\Http\Request;
 
 class DashboardController extends Controller
@@ -17,5 +18,11 @@ class DashboardController extends Controller
                 return redirect()->route('login');
                 break;
         }
+    }
+
+    // show all posts in dashboard
+    public function index() {
+        $posts = Post::all();
+        return view('admin.dashboard')->with('posts', $posts);
     }
 }
