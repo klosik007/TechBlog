@@ -23,6 +23,8 @@ Route::get('/', function () {
 
 Route::get('/dashboard', DashboardController::class)->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/data', [JsonDataController::class, 'index'])->name('data');
+
 Route::middleware(['auth', 'role:admin'])->group(function() {
     Route::get('/admin/dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::get('/admin/post', [PostsController::class, 'create'])->name('post.add');
