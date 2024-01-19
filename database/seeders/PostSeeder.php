@@ -18,5 +18,17 @@ class PostSeeder extends Seeder
             'content' => 'Here\'s the content of the blog article',
             'user_id' => 1
         ]);
+
+        Post::create([
+            'title' => 'How to learn Laravel2',
+            'content' => 'Here\'s the content of the blog article',
+            'user_id' => 1
+        ]);
+
+        Post::create([
+            'title' => 'How to learn Laravel3',
+            'content' => 'Here\'s the content of the blog article',
+            'user_id' => 1
+        ]);
     }
 }
