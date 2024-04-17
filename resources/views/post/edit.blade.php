@@ -12,23 +12,13 @@
                     <form id="edit_post_form" action="{{ route('post.update', $post) }}" method="post">
                         @method('put')
                         @csrf
-                        <x-text-input field="title" name="title" type="text" placeholder="Title" class="w-full" autocomplete="off" :value="@old('title', $post->title)"></x-text-input>
-                        <x-textarea form="edit_post_form" field="text" name="text" rows="10" placeholder="Start typing here..." class="w-full" :text="@old('text', $post->content)"></x-textarea>
+                        <x-text-input id="post_title_edit" field="title" name="title" type="text" placeholder="Title" class="w-full" autocomplete="off" :value="@old('title', $post->title)"></x-text-input>
+                        <x-textarea id="post_content_edit" form="edit_post_form" field="text" name="text" rows="10" placeholder="Start typing here..." class="w-full" :text="@old('text', $post->content)"></x-textarea>
                         <x-primary-button>Save</x-primary-button>
                     </form>
                 </div>
             </div>
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-3">
-                <div class="p-6 text-gray-900">
-                    <h1 class="font-semibold text-3xl text-gray-800 leading-tight mb-6">
-                        {{ __('Preview') }}
-                    </h1>
-                    <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-4">
-                        {{ $post->title }}
-                    </h2>
-                    {!! $post->content !!}
-                </div>
-            </div>
+            <x-post-preview post_title="{{ $post->title }}" post_content="{!! $post->content !!}"></x-post-preview>
         </div>
     </div>
 </x-app-layout>
