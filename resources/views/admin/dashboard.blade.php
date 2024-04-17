@@ -24,7 +24,7 @@
                     </div>
                     <h1 class="font-bold text-xl"> {{ $post->title }} </h1>
                     <div class="mt-3">
-                        <p> {{ html_entity_decode($post->content) }} </p>
+                        <p> {!! $post->content !!} </p>
                     </div>
                 </div>
             </div>
