@@ -18,7 +18,17 @@
                     </form>
                 </div>
             </div>
-
+            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg mb-3">
+                <div class="p-6 text-gray-900">
+                    <h1 class="font-semibold text-3xl text-gray-800 leading-tight mb-6">
+                        {{ __('Preview') }}
+                    </h1>
+                    <h2 class="font-semibold text-xl text-gray-800 leading-tight mb-4">
+                        {{ $post->title }}
+                    </h2>
+                    {!! $post->content !!}
+                </div>
+            </div>
         </div>
     </div>
 </x-app-layout>
